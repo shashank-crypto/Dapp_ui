@@ -14,8 +14,7 @@ export const Button = ({ text, bgColor, txtColor}) => {
   );
 };
 
-export const Navbar = () => {
-  const loggedIn = false;
+export const Navbar = ({loggedIn}) => {
   return (
     <div className="navbar">
       <Link to="/" style={{textDecoration:"none"}}><span style={{ fontSize: "2em", marginLeft: "5vw", fontWeight:"700" }}>NGOD-app</span></Link>

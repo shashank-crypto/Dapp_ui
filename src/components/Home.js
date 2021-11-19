@@ -3,9 +3,10 @@ import "./components.css";
 import img from "../images/dwnArrow.svg";
 import { Link } from "react-router-dom";
 
-export const Home = () => {
+export const Home = ({loggedIn}) => {
   return (
     <div className="home">
+      {!loggedIn ? 
       <section
         style={{ margin: "auto", textAlign: "center", height: "92vh" }}
         className="topSection"
@@ -50,7 +51,7 @@ export const Home = () => {
             <img src={img} alt="" className="arrow" />
           </div>
         </div>
-      </section>
+      </section> : <div></div>}
     </div>
   );
 };

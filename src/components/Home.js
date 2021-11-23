@@ -2,6 +2,20 @@ import React from "react";
 import "./components.css";
 import img from "../images/dwnArrow.svg";
 import { Link } from "react-router-dom";
+import { NgoBar } from "./NgoBar";
+
+const ngoinfo = {
+  name: "NGO Name",
+  owner: "Shashank",
+  location: "Darbhanga, Bihar",
+  funding: 100001,
+  reserve: 2893,
+  est: 2012,
+  contributors: 89,
+  events: 12,
+  weblink : "shashank.com",
+  fblink: "fb.com/shashank_chaudhary"
+}
 
 export const Home = ({loggedIn}) => {
   return (
@@ -51,7 +65,24 @@ export const Home = ({loggedIn}) => {
             <img src={img} alt="" className="arrow" />
           </div>
         </div>
-      </section> : <div></div>}
+      </section> : 
+      <div style={{display:"flex",flexDirection:"row", justifyContent:"space-around", marginTop:"10px"}}>
+        <div>
+        <div style={{backgroundColor:"green", width:"15vw"}} className="about">About</div>
+        </div>
+        <div className="ngobars">
+          Ngo slides - sort by location, name
+          <NgoBar ngoinfo={ngoinfo}/>
+          <NgoBar ngoinfo={ngoinfo}/>
+          <NgoBar ngoinfo={ngoinfo}/>
+          <NgoBar ngoinfo={ngoinfo}/>
+        </div>
+        <div>
+        <div style={{backgroundColor:"blue", width:"20vw"}} className="notification">
+          Maybe notifications
+        </div>
+        </div>
+      </div>}
     </div>
   );
 };

@@ -3,7 +3,7 @@ import { Button } from "./Navbar";
 import { Link } from "react-router-dom";
 import './components.css'
 
-const Input = ({ placeholder, password }) => {
+export const Input = ({ placeholder, password }) => {
   return (
     <div style={{ display: "flex", flexDirection: "column" }}>
       <span style={{ fontSize: "1.5em" }}> {placeholder}: </span>

@@ -18,9 +18,14 @@ const ngoinfo = {
 }
 
 export const Home = ({loggedIn}) => {
+  const connect = () => {
+    const Web3 = require('web3');
+    let web3 = new Web3("ws://localhost:8546");
+    web3.eth.getAccounts().then(console.log);
+  }
   return (
     <div className="home">
-      {!loggedIn ? 
+      {loggedIn ? 
       <section
         style={{ margin: "auto", textAlign: "center", height: "92vh" }}
         className="topSection"
@@ -41,7 +46,7 @@ export const Home = ({loggedIn}) => {
         <div>
           <div className="topButtons">
             <Link to="/login"><button
-              className="homeButton"
+              className="homeButton" onClick={connect}
               style={{
                 backgroundColor: "white",
                 color: "black",

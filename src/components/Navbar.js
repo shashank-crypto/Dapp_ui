@@ -26,7 +26,7 @@ export const Navbar = ({ loggedIn }) => {
         </span>
       </Link>
       <div style={{ marginRight: "15vw" }}>
-        {loggedIn ? (
+        {!loggedIn ? (
           <span style={{ fontSize: "1.5em" }}>Hey, User</span>
         ) : (
           <div>
